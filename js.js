@@ -63,14 +63,6 @@ function reigsterButtons() {
   sortOption.forEach((button) => button.addEventListener("click", selectSort));
 }
 
-function selectFilter() {
-  console.log("Clicked");
-}
-
-function selectSort() {
-  console.log("Chosen");
-}
-
 function prepareObject() {
   console.log("Object Prepared");
 }
@@ -78,3 +70,29 @@ function prepareObject() {
 function prepareObjects() {
   console.log("ObjectS Prepared");
 }
+
+//Filtering
+function selectFilter() {
+  console.log("Clicked");
+}
+
+//isXHouse Functions for selectFilter
+function isHufflePuff() {}
+function isGryffindor() {}
+function isSlytherin() {}
+function isRavenclaw() {}
+
+//Sorting
+function selectSort() {
+  console.log("Chosen");
+}
+
+//Sorting by firstName A-Z
+function sortByFirstNameAZ() {}
+//Sorting by firstName Z-A
+function sortByFirstNameZA() {}
+
+//Sorting by lastName A-Z
+function sortByLastNameAZ() {}
+//Sorting by lastName Z-A
+function sortByLastNameZA() {}
