@@ -283,15 +283,15 @@ function findGender() {}
 function findHouse() {}
 */
 function findBlood(lastName) {
-  let familyStatus = "Muggle-born";
+  let bloodStatus = "Muggle-born";
   if (lastName === "No Last Name") {
-    familyStatus = "Unknown";
+    bloodStatus = "Unknown";
   } else if (bloodJSON.half.includes(lastName)) {
-    familyStatus = "Halfblood";
+    bloodStatus = "Halfblood";
   } else if (bloodJSON.pure.includes(lastName)) {
-    familyStatus = "Pureblood";
+    bloodStatus = "Pureblood";
   }
-  return familyStatus;
+  return bloodStatus;
 }
 
 function findImagePath() {}
