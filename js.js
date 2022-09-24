@@ -96,3 +96,31 @@ function sortByFirstNameZA() {}
 function sortByLastNameAZ() {}
 //Sorting by lastName Z-A
 function sortByLastNameZA() {}
+
+function buildList() {}
+
+function displayList() {}
+
+function displayStudents() {}
+
+function displayModal() {}
+
+function findFirstName() {}
+
+function findMiddleName() {}
+
+function findLastName() {}
+
+function findLastNameHyphen() {}
+
+function findNickName() {}
+
+function findHouse() {}
+
+function findBlood() {}
+
+function findImagePath() {}
+
+function expelStudent() {}
+
+function prefectToggle() {}
