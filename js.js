@@ -292,7 +292,8 @@ function findBlood(lastName) {
   return bloodStatus;
 }
 
-function findImagePath() {}
+//TRY TO DO CLEAING UP + BLOOD IN FUNCTIONS IF TIME
+//function findImagePath() {}
 
 function expelStudent() {}
 
