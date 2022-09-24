@@ -245,6 +245,7 @@ function sortByFirstNameZA(studentA, studentB) {
     return 1;
   }
 }
+
 //Sorting by lastName A-Z
 function sortByLastNameAZ(studentA, studentB) {
   if (studentA.lastName < studentB.lastName) {
