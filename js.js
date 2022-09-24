@@ -36,12 +36,13 @@ const settings = {
   sortDir: "asc",
   search: "",
 };
-
 async function start() {
-  console.log("Klar");
+  console.log("ready");
   reigsterButtons();
-  await loadStudentsJSON();
   await loadBloodJSON();
+  await loadStudentsJSON();
+
+  prepareObjects(studentJSON);
 }
 
 async function loadStudentsJSON() {
@@ -68,19 +69,21 @@ function prepareObjects(jsonData) {
   console.log("Object Prepared");
   allStudents = jsonData.map(prepareObject);
 
-  buildList();
+  displayList(allStudents);
 }
 
 function prepareObject(jsonObject) {
   console.log("ObjectS Prepared");
   const studentTemplate = Object.create(Student);
-
   //Trimming fullname + house
-  let fullNameArray = jsonObject.fullname.trim();
+  let fullname;
+  fullname = jsonObject.fullname.trim();
+  fullname = fullname.toLowerCase();
+  let fullNameArray = fullname.split(" ");
+
   let studentHouse = jsonObject.house.trim();
 
-  fullNameArray = fullNameArray.toLowerCase();
-  fullNameArray = fullNameArray.split(" ");
+  let gender = jsonObject.gender.trim();
 
   //firstName cleaned up
   let firstName = fullNameArray[0];
@@ -90,9 +93,9 @@ function prepareObject(jsonObject) {
   studentTemplate.firstName = firstName;
 
   //middleName cleaned up
-  let middleName = fullName.substring(
-    fullName.indexOf(` `),
-    fullName.lastIndexOf(` `)
+  let middleName = fullname.substring(
+    fullname.indexOf(` `),
+    fullname.lastIndexOf(` `)
   );
   if (middleName === "") {
     studentTemplate.middleName = " ";
@@ -115,7 +118,7 @@ function prepareObject(jsonObject) {
   }
 
   //gender cleaned up
-  let gender = gender[0].toUpperCase() + gender.substring(1);
+  gender = gender[0].toUpperCase() + gender.substring(1);
   studentTemplate.gender = gender;
 
   //studentHouse cleaned up
@@ -124,7 +127,36 @@ function prepareObject(jsonObject) {
     studentHouse.substring(1).toLowerCase();
   studentTemplate.studentHouse = studentHouse;
 
-  console.log("hello: ", firstName);
+  //image cleaned up
+  let image;
+  if (fullname.includes("leanne")) {
+    image = " ";
+  } else if (fullname.toLowerCase().includes("patil")) {
+    image = `./images/patil_${studentTemplate.firstName.toLowerCase()}.png`;
+  } else if (fullname.includes("-")) {
+    image = `./images/${fullname
+      .substring(fullname.lastIndexOf("-") + 1)
+      .toLowerCase()}_${studentTemplate.firstName[0].toLowerCase()}.png`;
+  } else {
+    image = `./images/${fullname
+      .substring(fullname.lastIndexOf(" ") + 1)
+      .toLowerCase()}_${studentTemplate.firstName[0].toLowerCase()}.png`;
+  }
+  studentTemplate.image = image;
+
+  let bloodStatus;
+  if (bloodJSON.half.includes(lastName)) {
+    bloodStatus = "Halfblood";
+  } else if (bloodJSON.pure.includes(lastName)) {
+    bloodStatus = "Fullblood";
+  }
+  studentTemplate.blood = bloodStatus;
+
+  allStudents.push(studentTemplate);
+  currentStudents.push(studentTemplate);
+  console.log(studentTemplate);
+
+  return studentTemplate;
 }
 
 //Filtering
