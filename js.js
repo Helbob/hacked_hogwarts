@@ -163,6 +163,10 @@ function prepareObject(jsonObject) {
   let bloodStatus = findBlood(studentTemplate.lastName);
   studentTemplate.bloodStatus = bloodStatus;
 
+  let prefect;
+  prefect = false;
+  studentTemplate.prefect = prefect;
+
   //Pushing them into array
   allStudents.push(studentTemplate);
   currentStudents.push(studentTemplate);
@@ -263,7 +267,7 @@ function sortByLastNameZA(studentA, studentB) {
   }
 }
 
-//function buildList() {}
+function buildList() {}
 
 function displayList(student) {
   let lenghts = currentStudents.length;
@@ -281,8 +285,24 @@ function displayStudents(student) {
   klon.querySelector("#test").src = student.image;
   klon.querySelector("#hus").textContent = student.house;
   klon.querySelector("#gender").textContent = student.gender;
+
+  if (student.prefect === true) {
+    klon.querySelector("#prefect").src = `/images/prefect.png`;
+  } else {
+    klon.querySelector("#prefect").src = `/images/non-prefect.png`;
+  }
+  klon.querySelector("#prefect").addEventListener("click", prefectToggle);
+  function prefectToggle() {
+    if (student.prefect === true) {
+      student.prefect = false;
+    } else {
+      student.prefect = true;
+    }
+    displayList(currentStudents);
+  }
+
   klon
-    .querySelector("#styles")
+    .querySelector("#test")
     .addEventListener("click", () => showStudentInfo(student));
   container.appendChild(klon);
 }
@@ -319,7 +339,7 @@ function findBlood(lastName) {
 
 function expelStudent() {}
 
-function prefectToggle() {}
+//function prefectToggle() {}
 
 function squadToggle() {}
 
