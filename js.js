@@ -283,10 +283,8 @@ function findGender() {}
 function findHouse() {}
 */
 function findBlood(lastName) {
-  let bloodStatus = "Muggle-born";
-  if (lastName === "No Last Name") {
-    bloodStatus = "Unknown";
-  } else if (bloodJSON.half.includes(lastName)) {
+  let bloodStatus = "Muggle";
+  if (bloodJSON.half.includes(lastName)) {
     bloodStatus = "Halfblood";
   } else if (bloodJSON.pure.includes(lastName)) {
     bloodStatus = "Pureblood";
