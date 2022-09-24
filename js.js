@@ -5,17 +5,21 @@ const bloodUrl = "https://petlatkea.dk/2021/hogwarts/families.json";
 
 document.addEventListener("DOMContentLoaded", start);
 
+//My arrays
 let allStudents = [];
 let currentStudents = [];
 let expelledStudents = [];
 let seachBar = [];
 
+//JSON stuff
 let studentJSON;
 let bloodJSON;
 
+//Easier to use buttons / option
 const filterButton = document.querySelectorAll("[data-action='filter']");
 const sortOption = document.querySelectorAll("[data-action='sort'");
 
+//My prototype
 const Student = {
   firstName: "",
   middleName: "",
@@ -30,12 +34,15 @@ const Student = {
   squad: false,
 };
 
+//Settings for sort / filter / search
 const settings = {
   filter: "all",
   sortBy: "firstName",
   sortDir: "asc",
   search: "",
 };
+
+//Need await otherwise errors
 async function start() {
   console.log("ready");
   reigsterButtons();
@@ -45,18 +52,21 @@ async function start() {
   prepareObjects(studentJSON);
 }
 
+//Loading first JSON url
 async function loadStudentsJSON() {
   const response = await fetch(studentUrl);
   const studentData = await response.json();
   studentJSON = studentData;
 }
 
+//Loading second JSON url
 async function loadBloodJSON() {
   const response = await fetch(bloodUrl);
   const bloodData = await response.json();
   bloodJSON = bloodData;
 }
 
+//Buttuons click events
 function reigsterButtons() {
   filterButton.forEach((button) =>
     button.addEventListener("click", selectFilter)
@@ -65,6 +75,7 @@ function reigsterButtons() {
   sortOption.forEach((button) => button.addEventListener("click", selectSort));
 }
 
+//Prepareing stuff
 function prepareObjects(jsonData) {
   console.log("Object Prepared");
   allStudents = jsonData.map(prepareObject);
@@ -72,6 +83,7 @@ function prepareObjects(jsonData) {
   displayList(allStudents);
 }
 
+//Cleaing up my data + blood (Do this in seperate functions if time)
 function prepareObject(jsonObject) {
   console.log("ObjectS Prepared");
   const studentTemplate = Object.create(Student);
@@ -108,7 +120,7 @@ function prepareObject(jsonObject) {
 
   //lastName cleaned up
   let lastName = fullNameArray[fullNameArray.length - 1];
-  if (fullNameArray.length <= 6) {
+  if (fullname.length <= 6) {
     studentTemplate.lastName = "None";
   } else {
     lastName =
@@ -144,18 +156,14 @@ function prepareObject(jsonObject) {
   }
   studentTemplate.image = image;
 
-  let bloodStatus;
-  if (bloodJSON.half.includes(lastName)) {
-    bloodStatus = "Halfblood";
-  } else if (bloodJSON.pure.includes(lastName)) {
-    bloodStatus = "Fullblood";
-  }
-  studentTemplate.blood = bloodStatus;
+  //Bloodstatus done in function (Need the rest as well)
+  let bloodStatus = findBlood(studentTemplate.lastName);
+  studentTemplate.bloodStatus = bloodStatus;
 
+  //Pushing them into array
   allStudents.push(studentTemplate);
   currentStudents.push(studentTemplate);
   console.log(studentTemplate);
-
   return studentTemplate;
 }
 
@@ -173,6 +181,18 @@ function isRavenclaw() {}
 //Sorting
 function selectSort() {
   console.log("Chosen");
+  let sortedList = currentStudents;
+  if (sortBy === "firstName") {
+    sortedList = sortedList.sort(sortByFirstNameAZ);
+  } else if (sortBy === "lastName") {
+    sortedList = sortedList.sort(sortByLastNameAZ);
+  } else if (sortBy === "firstNameZA") {
+    sortedList = sortedList.sort(sortByFirstNameZA);
+  } else if (sortBy === "lastNameZA") {
+    sortedList = sortedList.sort(sortByLastNameZA);
+  }
+
+  //displayList(sortedList);
 }
 
 //Sorting by firstName A-Z
@@ -193,7 +213,7 @@ function displayStudents() {}
 
 function displayModal() {}
 
-/* TRY TO DO CLEAING UP IN FUNCTIONS IF TIME 
+/* TRY TO DO CLEAING UP + BLOOD IN FUNCTIONS IF TIME 
 function findFirstName() {}
 
 function findMiddleName() {}
@@ -207,8 +227,18 @@ function findNickName() {}
 function findGender() {}
 
 function findHouse() {}
-
-function findBlood() {} */
+*/
+function findBlood(lastName) {
+  let familyStatus = "Muggle-born";
+  if (lastName === "No Last Name") {
+    familyStatus = "Unknown";
+  } else if (bloodJSON.half.includes(lastName)) {
+    familyStatus = "Halfblood";
+  } else if (bloodJSON.pure.includes(lastName)) {
+    familyStatus = "Pureblood";
+  }
+  return familyStatus;
+}
 
 function findImagePath() {}
 
