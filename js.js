@@ -70,3 +70,11 @@ function selectFilter() {
 function selectSort() {
   console.log("Chosen");
 }
+
+function prepareObject() {
+  console.log("Object Prepared");
+}
+
+function prepareObjects() {
+  console.log("ObjectS Prepared");
+}
