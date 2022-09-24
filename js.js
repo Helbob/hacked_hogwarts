@@ -23,10 +23,10 @@ const Student = {
   gender: "",
   house: "",
   blood: "",
+  image: "",
   expelled: false,
   prefect: false,
   squad: false,
-  image: "",
 };
 
 const settings = {
@@ -115,6 +115,8 @@ function findLastNameHyphen() {}
 
 function findNickName() {}
 
+function findGender() {}
+
 function findHouse() {}
 
 function findBlood() {}
@@ -124,3 +126,7 @@ function findImagePath() {}
 function expelStudent() {}
 
 function prefectToggle() {}
+
+function squadToggle() {}
+
+function hackerMan() {}
