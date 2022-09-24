@@ -168,18 +168,50 @@ function prepareObject(jsonObject) {
 }
 
 //Filtering
-function selectFilter() {
+function selectFilter(event) {
   console.log("Clicked");
+  const filter = event.target.dataset.filter;
+  filterList(filter);
+}
+
+function filterList(filter) {
+  let filteredList = currentStudents;
+
+  if (filter === "hufflepuff") {
+    filteredList = filteredList.filter(isHuffle);
+  } else if (filter === "gryffindor") {
+    filteredList = filteredList.filter(isGryff);
+  } else if (filter === "slytherin") {
+    filteredList = filteredList.filter(isSlyth);
+  } else if (filter === "ravenclaw") {
+    filteredList = filteredList.filter(isRaven);
+  }
+
+  //displayList(filteredList);
 }
 
 //isXHouse Functions for selectFilter
-function isHufflePuff() {}
-function isGryffindor() {}
-function isSlytherin() {}
-function isRavenclaw() {}
+function isHufflePuff(student) {
+  return student.house === "Hufflepuff";
+}
+function isGryffindor(student) {
+  return student.house === "Gryffindor";
+}
+function isSlytherin(student) {
+  return student.house === "Slytherin";
+}
+function isRavenclaw(student) {
+  return student.house === "Ravenclaw";
+}
 
 //Sorting
-function selectSort() {
+function selectSort(event) {
+  const sortBy = event.target.dataset.sort;
+  sortList(sortBy);
+}
+
+//More sorting
+function sortList(sortBy) {
   console.log("Chosen");
   let sortedList = currentStudents;
   if (sortBy === "firstName") {
