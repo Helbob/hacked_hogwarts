@@ -196,14 +196,36 @@ function selectSort() {
 }
 
 //Sorting by firstName A-Z
-function sortByFirstNameAZ() {}
-//Sorting by firstName Z-A
-function sortByFirstNameZA() {}
-
+function sortByFirstNameAZ(studentA, studentB) {
+  if (studentA.firstname < studentB.firstname) {
+    return -1;
+  } else {
+    return 1;
+  }
+} //Sorting by firstName Z-A
+function sortByFirstNameZA(studentA, studentB) {
+  if (studentA.firstname > studentB.firstname) {
+    return -1;
+  } else {
+    return 1;
+  }
+}
 //Sorting by lastName A-Z
-function sortByLastNameAZ() {}
+function sortByLastNameAZ(studentA, studentB) {
+  if (studentA.lastName < studentB.lastName) {
+    return -1;
+  } else {
+    return 1;
+  }
+}
 //Sorting by lastName Z-A
-function sortByLastNameZA() {}
+function sortByLastNameZA(studentA, studentB) {
+  if (studentA.lastName > studentB.lastName) {
+    return -1;
+  } else {
+    return 1;
+  }
+}
 
 function buildList() {}
 
