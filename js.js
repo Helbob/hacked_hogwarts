@@ -296,7 +296,7 @@ function displayStudents(student) {
     if (student.prefect === true) {
       student.prefect = false;
     } else {
-      student.prefect = true;
+      tryToMakePrefect(student);
     }
     displayList(currentStudents);
   }
@@ -339,7 +339,41 @@ function findBlood(lastName) {
 
 function expelStudent() {}
 
-//function prefectToggle() {}
+function tryToMakePrefect(selectedStudent) {
+  const allPrefects = currentStudents.filter((student) => student.prefect);
+
+  const prefects = allPrefects.filter(
+    (prefect) => prefect.studentHouse === selectedStudent.studentHouse
+  );
+  const other = prefects
+    .filter(
+      (prefects) =>
+        selectedStudent.studentHouse &&
+        prefects.gender === selectedStudent.gender
+    )
+    .shift();
+  console.log(other);
+
+  if (other !== undefined) {
+    console.log("there can noly be one winner of  each type!");
+    removeOther(other);
+  } else {
+    makePrefect(selectedStudent);
+  }
+
+  function removeOther(other) {
+    removePrefect(other);
+    makePrefect(selectedStudent);
+  }
+
+  function removePrefect(prefectStudent) {
+    prefectStudent.prefect = false;
+  }
+
+  function makePrefect(prefectos) {
+    prefectos.prefect = true;
+  }
+}
 
 function squadToggle() {}
 
