@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prototype</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="search">
+      <input type="text" id="searching" placeholder="Search for xxx" />
+    </div>
+    <div class="filtering">
+      <select name="information" id="info">
+        <option
+          value="firstname"
+          data-action="sort"
+          data-sort-direction="asc"
+          data-sort="firstName"
+        >
+          Firstname by A-Z
+        </option>
+        <option
+          value="firstname"
+          data-action="sort"
+          data-sort-direction="asc"
+          data-sort="firstNameZA"
+        >
+          Firstname by Z-A
+        </option>
+        <option
+          value="lastname"
+          data-action="sort"
+          data-sort-direction="asc"
+          data-sort="lastName"
+        >
+          Lastname by A-Z
+        </option>
+
+        <option
+          value="lastname"
+          data-action="sort"
+          data-sort-direction="asc"
+          data-sort="lastNameZA"
+        >
+          Lastname by Z-A
+        </option>
+        <option value="prefect" data-action="sort" data-sort-direction="asc">
+          Prefects
+        </option>
+      </select>
+      <h2>Filter</h2>
+      <p>
+        <button class="filter" data-action="filter" data-filter="hufflepuff">
+          Hufflepuff
+        </button>
+        <button class="filter" data-action="filter" data-filter="gryffindor">
+          Gryffindor
+        </button>
+        <button class="filter" data-action="filter" data-filter="ravenclaw">
+          Ravenclaw
+        </button>
+        <button class="filter" data-action="filter" data-filter="slytherin">
+          Slytherin
+        </button>
+      </p>
+      <p id="length"></p>
+    </div>
+    <div id="container"></div>
+    <template id="newtemp">
+      <div id="styles">
+        <img src="" alt="" id="test" />
+        <h1 id="name"></h1>
+        <li data-field="house" id="hus"></li>
+        <li id="gender"></li>
+      </div>
+    </template>
+
+    <section id="popup">
+      <article id="">
+        <span id="close">&#x2715;</span>
+        <section>
+          <img src="" alt="" id="crest" />
+          <h2 class="nametwo"></h2>
+          <img src="" alt="" id="img" />
+          <p class="house"></p>
+          <p class="gender"></p>
+        </section>
+      </article>
+    </section>
+    <script src="js.js"></script>
+  </body>
+</html>

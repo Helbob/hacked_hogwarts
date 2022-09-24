@@ -1,0 +1,77 @@
+#container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  padding: 1.5%;
+  text-align: center;
+}
+
+li {
+  list-style-type: none;
+  /*font-family: "Merienda", cursive;*/
+  padding: 1%;
+  font-size: 15px;
+}
+
+img {
+  padding: 1.5%;
+}
+
+#styles {
+  border-top: 2px solid rgba(0, 0, 0, 0.123);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  flex-wrap: wrap;
+}
+
+h1 {
+  font-family: "Merienda", cursive;
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 1%;
+  margin: 0;
+}
+
+html {
+  background-color: rgb(255, 236, 209);
+}
+
+#popup {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow: scroll;
+}
+
+#popup article {
+  width: 60vw;
+  display: flex;
+  margin: 4rem auto;
+  border-radius: 5px;
+  padding: 12px;
+  background-color: white;
+  font-family: sans-serif;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  color: black;
+}
+
+#close {
+  color: black;
+  padding: 1%;
+  position: relative;
+  bottom: 30px;
+  right: 20px;
+  font-size: 2rem;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+#crest {
+  width: 10%;
+}
