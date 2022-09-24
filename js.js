@@ -86,7 +86,10 @@ function prepareObjects(jsonData) {
 //Cleaing up my data + blood (Do this in seperate functions if time)
 function prepareObject(jsonObject) {
   console.log("ObjectS Prepared");
+
+  //Creating students
   const studentTemplate = Object.create(Student);
+
   //Trimming fullname + house
   let fullname;
   fullname = jsonObject.fullname.trim();
@@ -178,30 +181,30 @@ function filterList(filter) {
   let filteredList = currentStudents;
 
   if (filter === "hufflepuff") {
-    filteredList = filteredList.filter(isHuffle);
+    filteredList = filteredList.filter(isHufflePuff);
   } else if (filter === "gryffindor") {
-    filteredList = filteredList.filter(isGryff);
+    filteredList = filteredList.filter(isGryffindor);
   } else if (filter === "slytherin") {
-    filteredList = filteredList.filter(isSlyth);
+    filteredList = filteredList.filter(isSlytherin);
   } else if (filter === "ravenclaw") {
-    filteredList = filteredList.filter(isRaven);
+    filteredList = filteredList.filter(isRavenclaw);
   }
 
-  //displayList(filteredList);
+  displayList(filteredList);
 }
 
 //isXHouse Functions for selectFilter
 function isHufflePuff(student) {
-  return student.house === "Hufflepuff";
+  return student.studentHouse === "Hufflepuff";
 }
 function isGryffindor(student) {
-  return student.house === "Gryffindor";
+  return student.studentHouse === "Gryffindor";
 }
 function isSlytherin(student) {
-  return student.house === "Slytherin";
+  return student.studentHouse === "Slytherin";
 }
 function isRavenclaw(student) {
-  return student.house === "Ravenclaw";
+  return student.studentHouse === "Ravenclaw";
 }
 
 //Sorting
@@ -224,7 +227,7 @@ function sortList(sortBy) {
     sortedList = sortedList.sort(sortByLastNameZA);
   }
 
-  //displayList(sortedList);
+  displayList(sortedList);
 }
 
 //Sorting by firstName A-Z
@@ -259,11 +262,29 @@ function sortByLastNameZA(studentA, studentB) {
   }
 }
 
-function buildList() {}
+//function buildList() {}
 
-function displayList() {}
+function displayList(student) {
+  let lenghts = currentStudents.length;
+  document.querySelector("#length").textContent = `Total Students: ${lenghts}`;
+  document.querySelector("#container").innerHTML = "";
+  student.forEach(displayStudents);
+}
 
-function displayStudents() {}
+function displayStudents(student) {
+  const klon = document.querySelector("#newtemp").content.cloneNode(true);
+  const container = document.querySelector("#container");
+
+  klon.querySelector("#name").textContent =
+    student.firstName + " " + student.middleName + " " + student.lastName;
+  klon.querySelector("#test").src = student.image;
+  klon.querySelector("#hus").textContent = student.house;
+  klon.querySelector("#gender").textContent = student.gender;
+  klon
+    .querySelector("#styles")
+    .addEventListener("click", () => showStudentInfo(student));
+  container.appendChild(klon);
+}
 
 function displayModal() {}
 
