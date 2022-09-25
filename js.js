@@ -381,7 +381,7 @@ function findBlood(lastName) {
 
 function expelStudent() {}
 
-//Prefect toggle
+//Prefect toggle  w/ restrictions
 function tryToMakePrefect(selectedStudent) {
   const allPrefects = currentStudents.filter((student) => student.prefect);
 
@@ -440,7 +440,7 @@ function tryToMakePrefect(selectedStudent) {
   }
 }
 
-//Squad toggle
+//Squad toggle w/ restrictions
 function tryToMakeSquad(selectedStudent) {
   if (
     selectedStudent.studentHouse === "Slytherin" ||
