@@ -281,6 +281,7 @@ function displayList(student) {
   displayCount(student);
 }
 
+//Displays the students in the template with info needed
 function displayStudents(student) {
   const klon = document.querySelector("#newtemp").content.cloneNode(true);
   const container = document.querySelector("#container");
@@ -307,12 +308,30 @@ function displayStudents(student) {
   }
 
   klon
-    .querySelector("#test")
-    .addEventListener("click", () => showStudentInfo(student));
+    .querySelector("#name")
+    .addEventListener("click", () => displayModal(student));
   container.appendChild(klon);
 }
 
-function displayModal() {}
+function displayModal(student) {
+  console.log("hej");
+
+  document.querySelector("#popup").classList.remove("hide2");
+  document
+    .querySelector("#popup .closebuttons")
+    .addEventListener("click", closeModal);
+  popup.querySelector("#fullname").textContent =
+    student.firstName + " " + student.middleName + " " + student.lastName;
+  popup.querySelector(".gender").textContent = "Gender: " + student.gender;
+  popup.querySelector(".house").textContent = "From: " + student.studentHouse;
+  popup.querySelector("#studentimg").src = student.image;
+  popup.querySelector("#crest").src = `images/${student.studentHouse}.png`;
+
+  function closeModal() {
+    document.querySelector("#popup").classList.add("hide2");
+  }
+  displayList(currentStudents);
+}
 
 /* TRY TO DO CLEAING UP + BLOOD IN FUNCTIONS IF TIME 
 function findFirstName() {}

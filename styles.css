@@ -38,14 +38,15 @@ html {
 }
 
 #popup {
-  display: none;
   position: fixed;
-  left: 0;
   top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8);
-  overflow: scroll;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #popup article {
@@ -72,13 +73,11 @@ html {
   cursor: pointer;
 }
 
-#crest {
-  width: 10%;
-}
-
 #prefect {
   width: 5%;
 }
+
+/* FIRST MODAL FOR PREFECT */
 
 .hide {
   display: none;
@@ -97,8 +96,8 @@ html {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 50%;
+  height: 50%;
   background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
@@ -116,4 +115,51 @@ button.closebutton {
 
 .dialog h1 {
   margin-top: 0;
+}
+
+/* SECOND MODAL FOR STUDENT INFO */
+
+.hide2 {
+  display: none;
+  visibility: hidden;
+}
+
+.modal2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button.closebuttons {
+  position: absolute;
+  right: 0em;
+  top: -1em;
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+}
+
+.dialog2 {
+  box-shadow: 1px 1px 10px #333;
+  border-radius: 12px;
+  padding: 2em;
+  background-color: #ffe19e;
+  position: relative;
+  max-width: 40%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+#crest {
+  justify-content: flex-end;
+  max-width: 50%;
+}
+
+#tester {
 }
