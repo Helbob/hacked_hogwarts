@@ -292,6 +292,7 @@ function displayStudents(student) {
   klon.querySelector("#hus").textContent = student.house;
   klon.querySelector("#gender").textContent = student.gender;
 
+  //PREFECT TOGGLE
   if (student.prefect === true) {
     klon.querySelector("#prefect").src = `/images/prefect.png`;
   } else {
@@ -303,6 +304,22 @@ function displayStudents(student) {
       student.prefect = false;
     } else {
       tryToMakePrefect(student);
+    }
+    displayList(currentStudents);
+  }
+
+  //SQUAD TOGGLE
+  if (student.squad === true) {
+    klon.querySelector("#squad").src = `/images/prefect.png`;
+  } else {
+    klon.querySelector("#squad").src = `/images/non-prefect.png`;
+  }
+  klon.querySelector("#squad").addEventListener("click", squadToggle);
+  function squadToggle() {
+    if (student.squad === true) {
+      student.squad = false;
+    } else {
+      tryToMakeSquad(student);
     }
     displayList(currentStudents);
   }
@@ -422,7 +439,25 @@ function tryToMakePrefect(selectedStudent) {
   }
 }
 
-function squadToggle() {}
+function tryToMakeSquad(selectedStudent) {
+  if (
+    selectedStudent.studentHouse === "Slytherin" ||
+    selectedStudent.blood === "Pureblood"
+  ) {
+    isPureOrSlyth(selectedStudent);
+  } else {
+    selectedStudent.squad = false;
+    notPureOrSlyth();
+  }
+
+  function isPureOrSlyth(selectedStudent) {
+    selectedStudent.squad = true;
+  }
+
+  function notPureOrSlyth() {
+    alert("NOT PURE OR SLYTH NO CAN DO SIR");
+  }
+}
 
 function hackerMan() {}
 

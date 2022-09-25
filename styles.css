@@ -77,6 +77,10 @@ html {
   width: 5%;
 }
 
+#squad {
+  width: 5%;
+}
+
 /* FIRST MODAL FOR PREFECT */
 
 .hide {
@@ -159,7 +163,4 @@ button.closebuttons {
 #crest {
   justify-content: flex-end;
   max-width: 50%;
-}
-
-#tester {
 }
