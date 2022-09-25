@@ -495,6 +495,19 @@ function searchList() {
 }
 
 function hackerMan() {
+  /* let hackerMan = {
+    firstName: "hackerman",
+    middleName: "",
+    lastName: "",
+    nickName: "",
+    gender: "",
+    house: "",
+    blood: "",
+    image: "",
+    expelled: false,
+    prefect: false,
+    squad: false,
+  }; */
   //Put yourself in (Hackerman)
   //Break blood
   //CANNOT expel hackerman popup "CANNOT EXPEL HACKERMAN SMILER"
