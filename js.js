@@ -473,23 +473,23 @@ function tryToMakeSquad(selectedStudent) {
 //Search function
 function searchList() {
   //Takes value from input puts it in lowercase
-  let search = document.querySelector("#searching").value.toLowerCase();
+  let input = searchInput.value.toLowerCase();
   let searchResult = currentStudents.filter(searchForX);
 
   //Able to search for firstName, middleName, lastName, bloodType and gender
   function searchForX(student) {
     if (
-      student.firstName.toString().toLowerCase().includes(search) ||
-      student.middleName.toString().toLowerCase().includes(search) ||
-      student.lastName.toString().toLowerCase().includes(search) ||
-      student.blood.toString().toLowerCase().includes(search) ||
-      student.gender.toString().toLowerCase().includes(search)
+      student.firstName.toString().toLowerCase().includes(input) ||
+      student.middleName.toString().toLowerCase().includes(input) ||
+      student.lastName.toString().toLowerCase().includes(input) ||
+      student.blood.toString().toLowerCase().includes(input) ||
+      student.gender.toString().toLowerCase().includes(input)
     ) {
       return true;
     }
     return false;
   }
-  if (search === " ") {
+  if (input === " ") {
     displayList(currentStudents);
   }
   displayList(searchResult);
