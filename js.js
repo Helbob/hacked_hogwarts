@@ -494,7 +494,14 @@ function searchList() {
   displayList(searchResult);
 }
 
-function hackerMan() {}
+function hackerMan() {
+  //Put yourself in (Hackerman)
+  //Break blood
+  //CANNOT expel hackerman popup "CANNOT EXPEL HACKERMAN SMILER"
+  //if (student.blood === "Pure"){do something so blood is random}
+  // maybe whenever a filter is clicked, do the randomBlood(); function
+  //settimeout for squads = settimeout(removeFromSqaud,“5000”) or smth simmilar
+}
 
 //Currently displays only count of ALL students
 //Missing for House and expelled students
