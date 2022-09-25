@@ -337,6 +337,7 @@ function displayModal(student) {
   document
     .querySelector("#popup .closebuttons")
     .addEventListener("click", closeModal);
+  document.querySelector(".expel").addEventListener("click", expelStudent);
   popup.querySelector("#fullname").textContent =
     student.firstName + " " + student.middleName + " " + student.lastName;
   popup.querySelector(".gender").textContent = "Gender: " + student.gender;
@@ -379,7 +380,7 @@ function findBlood(lastName) {
 //TRY TO DO CLEAING UP + BLOOD IN FUNCTIONS IF TIME
 //function findImagePath() {}
 
-function expelStudent() {}
+function expelStudent(student) {}
 
 //Prefect toggle  w/ restrictions
 function tryToMakePrefect(selectedStudent) {

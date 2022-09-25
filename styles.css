@@ -190,6 +190,24 @@ button.closebuttons {
   max-width: 50%;
 }
 
+.expel {
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  background-color: #c20802; /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.expel:hover {
+  border: 2px solid black;
+}
+
 @media only screen and (max-width: 600px) {
   #styles {
     flex-wrap: wrap;
