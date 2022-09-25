@@ -289,7 +289,7 @@ function displayStudents(student) {
   klon.querySelector("#name").textContent =
     student.firstName + " " + student.middleName + " " + student.lastName;
   klon.querySelector("#test").src = student.image;
-  klon.querySelector("#hus").textContent = student.house;
+  klon.querySelector("#hus").textContent = student.studentHouse;
   klon.querySelector("#gender").textContent = student.gender;
 
   //PREFECT TOGGLE
@@ -325,7 +325,7 @@ function displayStudents(student) {
   }
 
   klon
-    .querySelector("#name")
+    .querySelector("#showmore")
     .addEventListener("click", () => displayModal(student));
   container.appendChild(klon);
 }
