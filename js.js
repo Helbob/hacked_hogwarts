@@ -18,6 +18,7 @@ let bloodJSON;
 //Easier to use buttons / option
 const filterButton = document.querySelectorAll("[data-action='filter']");
 const sortOption = document.querySelectorAll("[data-action='sort'");
+let searchInput = document.querySelector("#searching");
 
 //My prototype
 const Student = {
@@ -73,6 +74,8 @@ function reigsterButtons() {
   );
 
   sortOption.forEach((button) => button.addEventListener("click", selectSort));
+
+  searchInput.addEventListener("input", searchList);
 }
 
 //Prepareing stuff
@@ -267,6 +270,7 @@ function sortByLastNameZA(studentA, studentB) {
   }
 }
 
+//Buildlist
 function buildList() {
   const currentList = filterList(allStudents);
   const sortedList = sortList(currentList);
@@ -274,6 +278,7 @@ function buildList() {
   displayList(sortedList);
 }
 
+//Emptying list and then putting students in
 function displayList(student) {
   document.querySelector("#container").innerHTML = "";
 
@@ -324,12 +329,14 @@ function displayStudents(student) {
     displayList(currentStudents);
   }
 
+  //Click for detailsModal
   klon
     .querySelector("#showmore")
     .addEventListener("click", () => displayModal(student));
   container.appendChild(klon);
 }
 
+//Details in the detailsModal
 function displayModal(student) {
   console.log("hej");
 
@@ -396,15 +403,15 @@ function tryToMakePrefect(selectedStudent) {
         prefects.gender === selectedStudent.gender
     )
     .shift();
-  console.log(other);
 
   if (other !== undefined) {
-    console.log("there can noly be one winner of  each type!");
     removeOther(other);
   } else {
     makePrefect(selectedStudent);
   }
 
+  //Displays the dialogbox asking if you want to remove the other prefect
+  //Also removes the other if thats chosen
   function removeOther(other) {
     document.querySelector("#remove_other").classList.remove("hide");
     document
@@ -463,8 +470,35 @@ function tryToMakeSquad(selectedStudent) {
   }
 }
 
+//Search function
+function searchList() {
+  //Takes value from input puts it in lowercase
+  let search = document.querySelector("#searching").value.toLowerCase();
+  let searchResult = currentStudents.filter(searchForX);
+
+  //Able to search for firstName, middleName, lastName, bloodType and gender
+  function searchForX(student) {
+    if (
+      student.firstName.toString().toLowerCase().includes(search) ||
+      student.middleName.toString().toLowerCase().includes(search) ||
+      student.lastName.toString().toLowerCase().includes(search) ||
+      student.blood.toString().toLowerCase().includes(search) ||
+      student.gender.toString().toLowerCase().includes(search)
+    ) {
+      return true;
+    }
+    return false;
+  }
+  if (search === " ") {
+    displayList(currentStudents);
+  }
+  displayList(searchResult);
+}
+
 function hackerMan() {}
 
+//Currently displays only count of ALL students
+//Missing for House and expelled students
 function displayCount() {
   let lenghts = currentStudents.length;
   document.querySelector("#length").textContent = `Total Students: ${lenghts}`;
