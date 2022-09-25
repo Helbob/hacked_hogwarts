@@ -267,13 +267,18 @@ function sortByLastNameZA(studentA, studentB) {
   }
 }
 
-function buildList() {}
+function buildList() {
+  const currentList = filterList(allStudents);
+  const sortedList = sortList(currentList);
+
+  displayList(sortedList);
+}
 
 function displayList(student) {
-  let lenghts = currentStudents.length;
-  document.querySelector("#length").textContent = `Total Students: ${lenghts}`;
   document.querySelector("#container").innerHTML = "";
+
   student.forEach(displayStudents);
+  displayCount(student);
 }
 
 function displayStudents(student) {
@@ -362,8 +367,30 @@ function tryToMakePrefect(selectedStudent) {
   }
 
   function removeOther(other) {
-    removePrefect(other);
-    makePrefect(selectedStudent);
+    document.querySelector("#remove_other").classList.remove("hide");
+    document
+      .querySelector("#remove_other .closebutton")
+      .addEventListener("click", closeDialog);
+    document
+      .querySelector("#removeother")
+      .addEventListener("click", clickRemoveOther);
+
+    function closeDialog() {
+      document.querySelector("#remove_other").classList.add("hide");
+      document
+        .querySelector("#remove_other .closebutton")
+        .removeEventListener("click", closeDialog);
+      document
+        .querySelector("#removeother")
+        .removeEventListener("click", clickRemoveOther);
+    }
+
+    function clickRemoveOther() {
+      removePrefect(other);
+      makePrefect(selectedStudent);
+      displayList(currentStudents);
+      closeDialog();
+    }
   }
 
   function removePrefect(prefectStudent) {
@@ -378,3 +405,8 @@ function tryToMakePrefect(selectedStudent) {
 function squadToggle() {}
 
 function hackerMan() {}
+
+function displayCount() {
+  let lenghts = currentStudents.length;
+  document.querySelector("#length").textContent = `Total Students: ${lenghts}`;
+}
