@@ -160,8 +160,8 @@ function prepareObject(jsonObject) {
   studentTemplate.image = image;
 
   //Bloodstatus done in function (Need the rest as well)
-  let bloodStatus = findBlood(studentTemplate.lastName);
-  studentTemplate.bloodStatus = bloodStatus;
+  let blood = findBlood(studentTemplate.lastName);
+  studentTemplate.blood = blood;
 
   let prefect;
   prefect = false;
@@ -326,6 +326,7 @@ function displayModal(student) {
   popup.querySelector(".house").textContent = "From: " + student.studentHouse;
   popup.querySelector("#studentimg").src = student.image;
   popup.querySelector("#crest").src = `images/${student.studentHouse}.png`;
+  popup.querySelector(".blood").textContent = "Bloodtype: " + student.blood;
 
   function closeModal() {
     document.querySelector("#popup").classList.add("hide2");
@@ -349,13 +350,13 @@ function findGender() {}
 function findHouse() {}
 */
 function findBlood(lastName) {
-  let bloodStatus = "Muggle";
+  let blood = "Muggle";
   if (bloodJSON.half.includes(lastName)) {
-    bloodStatus = "Halfblood";
+    blood = "Halfblood";
   } else if (bloodJSON.pure.includes(lastName)) {
-    bloodStatus = "Pureblood";
+    blood = "Pureblood";
   }
-  return bloodStatus;
+  return blood;
 }
 
 //TRY TO DO CLEAING UP + BLOOD IN FUNCTIONS IF TIME
