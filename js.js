@@ -457,6 +457,7 @@ function tryToMakeSquad(selectedStudent) {
   }
 
   function notPureOrSlyth() {
+    //make a popup instead of alert
     alert("NOT PURE OR SLYTH NO CAN DO SIR");
   }
 }
