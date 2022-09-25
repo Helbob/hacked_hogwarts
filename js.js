@@ -40,7 +40,6 @@ const settings = {
   filter: "all",
   sortBy: "firstName",
   sortDir: "asc",
-  search: "",
 };
 
 //Need await otherwise errors
