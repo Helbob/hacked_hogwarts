@@ -26,6 +26,9 @@ const filterButton = document.querySelectorAll("[data-action='filter']");
 const sortOption = document.querySelectorAll("[data-action='sort'");
 let searchInput = document.querySelector("#searching");
 
+//Hack boolean
+let isSystemHackedQuestionmark = false;
+
 //My prototype
 const Student = {
   firstName: "",
@@ -194,7 +197,7 @@ function selectFilter(event) {
 
 function filterList(filter) {
   let filteredList = currentStudents;
-  let expelledList = expelledStudents;
+  //let expelledList = expelledStudents;
   if (filter === "hufflepuff") {
     filteredList = filteredList.filter(isHufflePuff);
   } else if (filter === "gryffindor") {
@@ -292,7 +295,7 @@ function sortByLastNameZA(studentA, studentB) {
 
 //Buildlist
 function buildList() {
-  const currentList = filterList(allStudents);
+  const currentList = filterList(currentStudents);
   const sortedList = sortList(currentList);
 
   displayList(sortedList);
@@ -564,6 +567,7 @@ function searchList() {
 
 function hackerMan() {
   console.log("hihi hack");
+  isSystemHackedQuestionmark = true;
   //put in by hackermanTemplate instead, this is just temp solution
   const Hackerman = {
     firstName: "",
@@ -598,6 +602,7 @@ function hackerMan() {
   //settimeout for squads = settimeout(removeFromSqaud,“5000”) or smth simmilar
 }
 
+function breakBlood() {}
 //Currently displays only count of ALL students
 //Missing for House and expelled students
 function displayCount() {
