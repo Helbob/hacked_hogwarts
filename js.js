@@ -556,6 +556,7 @@ function searchList() {
 
 function hackerMan() {
   console.log("hihi hack");
+  //put in by hackermanTemplate instead, this is just temp solution
   let Hackerman = {
     firstName: "Hackerman",
     middleName: "",
