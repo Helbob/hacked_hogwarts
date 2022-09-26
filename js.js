@@ -603,6 +603,7 @@ function hackerMan() {
   //settimeout for squads = settimeout(removeFromSqaud,“5000”) or smth simmilar
 }
 
+//Maybe mathrandom to make some bloods random if not all
 function breakBlood(student) {
   if (student.blood === "Muggle") {
     student.blood = "Pureblood";
