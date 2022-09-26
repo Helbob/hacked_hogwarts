@@ -525,7 +525,7 @@ function hackerMan() {
   //Put yourself in (Hackerman)
   //Break blood
   //CANNOT expel hackerman popup "CANNOT EXPEL HACKERMAN SMILER"
-  //hackerman picture = ezclap or some pepe
+  //hackerman picture = ezclap or some pepe or just a frog for the memes
   //if (student.blood === "Pure"){do something so blood is random}
   // maybe whenever a filter is clicked, do the randomBlood(); function
   //settimeout for squads = settimeout(removeFromSqaud,“5000”) or smth simmilar
