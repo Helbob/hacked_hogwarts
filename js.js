@@ -460,7 +460,9 @@ function tryToMakeSquad(selectedStudent) {
   }
 
   function isPureOrSlyth(selectedStudent) {
+    //need to toggle on it so like !== true? or smth idfk
     selectedStudent.squad = true;
+    //console.log(selectedStudent.squad);
   }
 
   function notPureOrSlyth() {
@@ -533,5 +535,7 @@ function hackerMan() {
 //Missing for House and expelled students
 function displayCount() {
   let lenghts = currentStudents.length;
-  document.querySelector("#length").textContent = `Total Students: ${lenghts}`;
+  document.querySelector(
+    "#totalstudents"
+  ).textContent = `Total Students: ${lenghts}`;
 }
