@@ -4,7 +4,11 @@ const studentUrl = "https://petlatkea.dk/2021/hogwarts/students.json";
 const bloodUrl = "https://petlatkea.dk/2021/hogwarts/families.json";
 
 document.addEventListener("DOMContentLoaded", start);
-//addeventlistener(keydown 38, hackerman)
+document.addEventListener("keydown", (event) => {
+  if (event.key == "ArrowUp") {
+    hackerMan();
+  }
+});
 //arrowkey up is 38
 
 //My arrays
@@ -551,8 +555,9 @@ function searchList() {
 }
 
 function hackerMan() {
-  /* let hackerMan = {
-    firstName: "hackerman",
+  console.log("hihi hack");
+  let Hackerman = {
+    firstName: "Hackerman",
     middleName: "",
     lastName: "",
     nickName: "",
@@ -563,7 +568,12 @@ function hackerMan() {
     expelled: false,
     prefect: false,
     squad: false,
-  }; */
+  };
+  const hackerManTemplate = Object.create(Hackerman);
+  currentStudents.push(Hackerman);
+  console.log(currentStudents);
+
+  displayList(currentStudents);
   //Put yourself in (Hackerman)
   //Break blood
   //CANNOT expel hackerman popup "CANNOT EXPEL HACKERMAN SMILER"
