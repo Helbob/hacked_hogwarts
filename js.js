@@ -399,16 +399,17 @@ function findBlood(lastName) {
 
 function expelStudent() {
   console.log("tester");
-  //JEG SENDER DET FORKERT FIS MED I STUDENTOTFIND MEN HVAD ER DET RIGTIGE OMG
-  let studentToFind = { firstName: "Pansy", lastName: "Parkinson" };
+  let selectedStudent = this.parentElement
+    .querySelector("div:nth-of-type(2) h1")
+    .textContent.split(" ")[0];
+
+  let studentToFind = selectedStudent;
   console.log(studentToFind);
 
   const index = currentStudents.findIndex((elm) => {
-    if (elm.firstName === studentToFind.firstName) {
-      console.log("hejsaaa");
+    if (elm.firstName === studentToFind) {
       return true;
     }
-    console.log("isdklak");
     return false;
   });
 
@@ -419,8 +420,13 @@ function expelStudent() {
 
     expelledStudents.push(foundStudent);
     console.log("expelled students", expelledStudents);
+    closeDialog();
     console.log(currentStudents);
     displayList(currentStudents);
+  }
+
+  function closeDialog() {
+    document.querySelector("#popup").classList.add("hide2");
   }
 }
 
