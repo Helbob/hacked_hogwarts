@@ -392,7 +392,11 @@ function findBlood(lastName) {
 //TRY TO DO CLEAING UP + BLOOD IN FUNCTIONS IF TIME
 //function findImagePath() {}
 
-function expelStudent(student) {}
+function expelStudent(selectedStudent) {
+  //push to expelled arr
+  //splice
+  //other stuff fml
+}
 
 //Prefect toggle  w/ restrictions
 function tryToMakePrefect(selectedStudent) {
