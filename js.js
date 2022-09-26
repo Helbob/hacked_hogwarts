@@ -565,8 +565,8 @@ function searchList() {
 function hackerMan() {
   console.log("hihi hack");
   //put in by hackermanTemplate instead, this is just temp solution
-  let Hackerman = {
-    firstName: "Hackerman",
+  const Hackerman = {
+    firstName: "",
     middleName: "",
     lastName: "",
     nickName: "",
@@ -575,11 +575,17 @@ function hackerMan() {
     blood: "",
     image: "",
     expelled: false,
-    prefect: false,
-    squad: false,
+    prefect: true,
+    squad: true,
   };
   const hackerManTemplate = Object.create(Hackerman);
-  currentStudents.push(Hackerman);
+  let firstName = "Hackerman";
+  let image = "images/hackerman.jpg";
+
+  hackerManTemplate.image = image;
+  hackerManTemplate.firstName = firstName;
+
+  currentStudents.push(hackerManTemplate);
   document.body.style.background = "#dd93d4b9";
   displayList(currentStudents);
   console.log(currentStudents);
