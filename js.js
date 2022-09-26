@@ -591,6 +591,7 @@ function hackerMan() {
 
   currentStudents.push(hackerManTemplate);
   document.body.style.background = "#dd93d4b9";
+  currentStudents.forEach(breakBlood);
   displayList(currentStudents);
   console.log(currentStudents);
   //Put yourself in (Hackerman)
@@ -602,7 +603,15 @@ function hackerMan() {
   //settimeout for squads = settimeout(removeFromSqaud,“5000”) or smth simmilar
 }
 
-function breakBlood() {}
+function breakBlood(student) {
+  if (student.blood === "Muggle") {
+    student.blood = "Pureblood";
+  } else if (student.blood === "Pureblood") {
+    student.blood = "Halfblood";
+  } else if (student.blood === "Halfblood") {
+    student.blood = "Muggle";
+  }
+}
 //Currently displays only count of ALL students
 //Missing for House and expelled students
 function displayCount() {
