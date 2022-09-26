@@ -465,7 +465,19 @@ function tryToMakeSquad(selectedStudent) {
 
   function notPureOrSlyth() {
     //make a popup instead of alert
-    alert("NOT PURE OR SLYTH NO CAN DO SIR");
+    document.querySelector("#notsquad").classList.remove("hide");
+
+    document
+      .querySelector("#notsquad .closebutton")
+      .addEventListener("click", closeWindow);
+    document
+      .querySelector("#closebuttonok")
+      .addEventListener("click", closeWindow);
+
+    function closeWindow() {
+      document.querySelector("#notsquad").classList.add("hide");
+    }
+    // alert("NOT PURE OR SLYTH NO CAN DO SIR");
   }
 }
 
