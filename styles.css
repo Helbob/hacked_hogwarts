@@ -15,7 +15,6 @@ li {
 
 img {
   padding: 1.5%;
-  cursor: pointer;
 }
 
 #styles {
@@ -44,7 +43,7 @@ html {
 }
 
 .right button {
-  background-color: #afa04c; /* Green */
+  background-color: #d2c160;
   height: 45px;
   border: none;
   border-radius: 2px;
@@ -55,6 +54,22 @@ html {
   display: inline-block;
   font-size: 16px;
   margin-top: 2.8%;
+  cursor: pointer;
+}
+
+.right button:hover {
+  background-color: #afa04c;
+  height: 45px;
+  border: none;
+  border-radius: 2px;
+  border: 2px solid rgba(51, 51, 51, 0.301);
+  color: rgb(0, 0, 0);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 2.8%;
+  cursor: pointer;
 }
 
 .left {
@@ -229,6 +244,7 @@ button.closebuttons {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    cursor: pointer;
     margin-top: 0%;
   }
 
@@ -246,4 +262,33 @@ button.closebuttons {
     width: 100%;
     cursor: pointer;
   }
+}
+
+#closebuttonok {
+  background-color: #d2c160;
+  height: 30px;
+  border: none;
+  border-radius: 2px;
+  border: 2px solid rgba(51, 51, 51, 0.301);
+  color: rgb(0, 0, 0);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 0%;
+  cursor: pointer;
+}
+
+#closebuttonok:hover {
+  background-color: #afa04c;
+  height: 30px;
+  border: none;
+  border-radius: 2px;
+  border: 2px solid rgba(51, 51, 51, 0.301);
+  color: rgb(0, 0, 0);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 0%;
 }
