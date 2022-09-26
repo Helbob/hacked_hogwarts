@@ -194,9 +194,15 @@ function filterList(filter) {
     filteredList = filteredList.filter(isSlytherin);
   } else if (filter === "ravenclaw") {
     filteredList = filteredList.filter(isRavenclaw);
+  } else if (filter === "all") {
+    filteredList = filteredList.filter(showAllStudents);
   }
 
   displayList(filteredList);
+}
+
+function showAllStudents() {
+  return currentStudents;
 }
 
 //isXHouse Functions for selectFilter
