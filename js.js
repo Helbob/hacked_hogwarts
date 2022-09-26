@@ -4,6 +4,8 @@ const studentUrl = "https://petlatkea.dk/2021/hogwarts/students.json";
 const bloodUrl = "https://petlatkea.dk/2021/hogwarts/families.json";
 
 document.addEventListener("DOMContentLoaded", start);
+//addeventlistener(keydown 38, hackerman)
+//arrowkey up is 38
 
 //My arrays
 let allStudents = [];
@@ -168,6 +170,9 @@ function prepareObject(jsonObject) {
   let prefect;
   prefect = false;
   studentTemplate.prefect = prefect;
+
+  let expelled = false;
+  studentTemplate.expelled = expelled;
 
   //Pushing them into array
   allStudents.push(studentTemplate);
@@ -392,10 +397,31 @@ function findBlood(lastName) {
 //TRY TO DO CLEAING UP + BLOOD IN FUNCTIONS IF TIME
 //function findImagePath() {}
 
-function expelStudent(selectedStudent) {
-  //push to expelled arr
-  //splice
-  //other stuff fml
+function expelStudent() {
+  console.log("tester");
+  //JEG SENDER DET FORKERT FIS MED I STUDENTOTFIND MEN HVAD ER DET RIGTIGE OMG
+  let studentToFind = { firstName: "Pansy", lastName: "Parkinson" };
+  console.log(studentToFind);
+
+  const index = currentStudents.findIndex((elm) => {
+    if (elm.firstName === studentToFind.firstName) {
+      console.log("hejsaaa");
+      return true;
+    }
+    console.log("isdklak");
+    return false;
+  });
+
+  console.log("index", index);
+  if (index !== -1) {
+    const splicedArray = currentStudents.splice(index, 1);
+    const foundStudent = splicedArray[0];
+
+    expelledStudents.push(foundStudent);
+    console.log("expelled students", expelledStudents);
+    console.log(currentStudents);
+    displayList(currentStudents);
+  }
 }
 
 //Prefect toggle  w/ restrictions
