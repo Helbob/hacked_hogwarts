@@ -571,9 +571,9 @@ function hackerMan() {
   };
   const hackerManTemplate = Object.create(Hackerman);
   currentStudents.push(Hackerman);
-  console.log(currentStudents);
-
+  document.body.style.background = "#dd93d4b9";
   displayList(currentStudents);
+  console.log(currentStudents);
   //Put yourself in (Hackerman)
   //Break blood
   //CANNOT expel hackerman popup "CANNOT EXPEL HACKERMAN SMILER"

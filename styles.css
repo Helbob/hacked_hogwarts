@@ -6,6 +6,10 @@
   text-align: center;
 }
 
+body {
+  margin: 0;
+}
+
 li {
   list-style-type: none;
   /*font-family: "Merienda", cursive;*/
@@ -291,4 +295,8 @@ button.closebuttons {
   display: inline-block;
   font-size: 16px;
   margin-top: 0%;
+}
+
+.idk {
+  background-color: #dd93d4b9;
 }
