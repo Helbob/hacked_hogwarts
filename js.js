@@ -194,7 +194,7 @@ function selectFilter(event) {
 
 function filterList(filter) {
   let filteredList = currentStudents;
-
+  let expelledList = expelledStudents;
   if (filter === "hufflepuff") {
     filteredList = filteredList.filter(isHufflePuff);
   } else if (filter === "gryffindor") {
@@ -205,6 +205,8 @@ function filterList(filter) {
     filteredList = filteredList.filter(isRavenclaw);
   } else if (filter === "all") {
     filteredList = filteredList.filter(showAllStudents);
+  } else if (filter === "expel") {
+    filteredList = filteredList.filter(showAllExpelledStudents);
   }
 
   displayList(filteredList);
@@ -212,6 +214,10 @@ function filterList(filter) {
 
 function showAllStudents() {
   return currentStudents;
+}
+
+function showAllExpelledStudents(student) {
+  return student.expelled == true;
 }
 
 //isXHouse Functions for selectFilter
@@ -400,6 +406,8 @@ function findBlood(lastName) {
 
 //TRY TO DO CLEAING UP + BLOOD IN FUNCTIONS IF TIME
 //function findImagePath() {}
+
+function expelYayOrNay() {}
 
 function expelStudent() {
   console.log("tester");
