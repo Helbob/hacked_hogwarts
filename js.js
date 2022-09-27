@@ -537,7 +537,7 @@ function tryToMakeSquad(selectedStudent) {
     document.querySelector("#hacksquad").classList.remove("hide");
     document.querySelector("#hacksquad").addEventListener("click", closeWindow);
     document
-      .querySelector("#hacksquad #closebuttonok")
+      .querySelector("#hacksquad .bounce")
       .addEventListener("click", closeWindow);
 
     function closeWindow() {
