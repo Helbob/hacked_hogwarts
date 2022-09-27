@@ -492,11 +492,7 @@ function tryToMakePrefect(selectedStudent) {
 
 //Squad toggle w/ restrictions
 function tryToMakeSquad(selectedStudent) {
-  if (
-    (isSystemHackedQuestionmark === true &&
-      selectedStudent.studentHouse === "Slytherin") ||
-    selectedStudent.blood === "Pureblood"
-  ) {
+  if (isSystemHackedQuestionmark === true) {
     selectedStudent.squad = true;
     setTimeout(() => {
       selectedStudent.squad = false;

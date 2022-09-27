@@ -84,7 +84,6 @@ h1 {
   font-family: "Merienda", cursive;
   font-size: 0.9rem;
   font-weight: bold;
-  padding: 1%;
   margin: 0;
 }
 
@@ -132,6 +131,7 @@ html {
   justify-content: center;
 }
 
+/* POP UP DETAILS */
 #popup {
   position: fixed;
   top: 0;
@@ -144,19 +144,6 @@ html {
   align-items: center;
 }
 
-#popup article {
-  width: 60vw;
-  display: flex;
-  margin: 4rem auto;
-  border-radius: 5px;
-  padding: 12px;
-  background-color: white;
-  font-family: sans-serif;
-  background-color: rgb(255, 255, 255);
-  border: none;
-  color: black;
-}
-
 #close {
   color: black;
   padding: 1%;
@@ -166,6 +153,9 @@ html {
   font-size: 2rem;
   font-weight: bolder;
   cursor: pointer;
+}
+
+#tester {
 }
 
 #prefect {
@@ -250,21 +240,28 @@ button.closebuttons {
   padding: 2em;
   background-color: #ffe19e;
   position: relative;
-  max-width: 40%;
   display: grid;
+  width: 50%;
   grid-template-columns: 1fr 2fr;
 }
 
 #crest {
   justify-content: flex-end;
-  max-width: 50%;
+  max-width: 7%;
+  position: absolute;
+  left: 0%;
+  top: 45%;
+}
+
+.work {
+  width: 75%;
 }
 
 .expel {
   border-radius: 50%;
   width: 2em;
   height: 2em;
-  background-color: #c20802; /* Green */
+  background-color: #c20802;
   border: none;
   color: white;
   text-align: center;
@@ -272,6 +269,12 @@ button.closebuttons {
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+  grid-area: right;
+}
+
+.leftie {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .expel:hover {
