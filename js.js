@@ -515,7 +515,7 @@ function tryToMakeSquad(selectedStudent) {
     setTimeout(() => {
       selectedStudent.squad = false;
       //MAKE THIS ANOTHER FUNCTION WITH ANOTHER POPUP
-      notPureOrSlyth(selectedStudent);
+      breakSquadPopup(selectedStudent);
       displayList(currentStudents);
     }, 2000);
   } else if (
@@ -533,7 +533,17 @@ function tryToMakeSquad(selectedStudent) {
     selectedStudent.squad = !false;
     //console.log(selectedStudent.squad);
   }
-  function breakSquadPopup() {}
+  function breakSquadPopup() {
+    document.querySelector("#hacksquad").classList.remove("hide");
+    document.querySelector("#hacksquad").addEventListener("click", closeWindow);
+    document
+      .querySelector("#hacksquad #closebuttonok")
+      .addEventListener("click", closeWindow);
+
+    function closeWindow() {
+      document.querySelector("#hacksquad").classList.add("hide");
+    }
+  }
   function notPureOrSlyth() {
     //make a popup instead of alert
     document.querySelector("#notsquad").classList.remove("hide");
