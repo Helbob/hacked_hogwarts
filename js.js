@@ -191,7 +191,7 @@ function selectFilter(event) {
 
 function filterList(filter) {
   let filteredList = currentStudents;
-  //let expelledList = expelledStudents;
+  let expelledList = expelledStudents;
   if (filter === "hufflepuff") {
     filteredList = filteredList.filter(isHufflePuff);
   } else if (filter === "gryffindor") {
@@ -203,7 +203,7 @@ function filterList(filter) {
   } else if (filter === "all") {
     filteredList = filteredList.filter(showAllStudents);
   } else if (filter === "expel") {
-    filteredList = filteredList.filter(showAllExpelledStudents);
+    filteredList = expelledStudents.filter(showAllExpelledStudents);
   }
 
   displayList(filteredList);
@@ -214,7 +214,7 @@ function showAllStudents() {
 }
 
 function showAllExpelledStudents(student) {
-  return student.expelled == true;
+  return student.expelled === true;
 }
 
 //isXHouse Functions for selectFilter
@@ -621,7 +621,6 @@ function breakBlood(student) {
   }
 }
 
-function breakSquad(student) {}
 //Currently displays only count of ALL students
 //Missing for House and expelled students
 function displayCount() {
