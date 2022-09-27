@@ -507,6 +507,19 @@ function tryToMakePrefect(selectedStudent) {
 //Squad toggle w/ restrictions
 function tryToMakeSquad(selectedStudent) {
   if (
+    (isSystemHackedQuestionmark === true &&
+      selectedStudent.studentHouse === "Slytherin") ||
+    selectedStudent.blood === "Pureblood"
+  ) {
+    selectedStudent.squad = true;
+    setTimeout(() => {
+      selectedStudent.squad = false;
+      //MAKE THIS ANOTHER FUNCTION WITH ANOTHER POPUP
+      notPureOrSlyth(selectedStudent);
+      displayList(currentStudents);
+    }, 2000);
+    // breakSquad(selectedStudent, 3000);
+  } else if (
     selectedStudent.studentHouse === "Slytherin" ||
     selectedStudent.blood === "Pureblood"
   ) {
@@ -518,10 +531,13 @@ function tryToMakeSquad(selectedStudent) {
 
   function isPureOrSlyth(selectedStudent) {
     //need to toggle on it so like !== true? or smth idfk
-    selectedStudent.squad = true;
+    selectedStudent.squad = !false;
     //console.log(selectedStudent.squad);
   }
-
+  function breakSquad(selectedStudent) {
+    selectedStudent.squad = false;
+    console.log(selectedStudent);
+  }
   function notPureOrSlyth() {
     //make a popup instead of alert
     document.querySelector("#notsquad").classList.remove("hide");
@@ -592,6 +608,7 @@ function hackerMan() {
   currentStudents.push(hackerManTemplate);
   document.body.style.background = "#dd93d4b9";
   currentStudents.forEach(breakBlood);
+  //currentStudents.forEach(breakSquad);
   displayList(currentStudents);
   console.log(currentStudents);
   //Put yourself in (Hackerman)
@@ -613,6 +630,8 @@ function breakBlood(student) {
     student.blood = "Muggle";
   }
 }
+
+function breakSquad(student) {}
 //Currently displays only count of ALL students
 //Missing for House and expelled students
 function displayCount() {
