@@ -4,6 +4,8 @@
   gap: 1px;
   padding: 1.5%;
   text-align: center;
+  margin: 0 auto;
+  max-width: 80%;
 }
 
 body {
@@ -41,6 +43,11 @@ body {
   font-size: 16px;
   margin-top: 2.8%;
   cursor: pointer;
+}
+
+.filtering {
+  margin: 0 auto;
+  max-width: 50%;
 }
 
 li {
