@@ -518,7 +518,6 @@ function tryToMakeSquad(selectedStudent) {
       notPureOrSlyth(selectedStudent);
       displayList(currentStudents);
     }, 2000);
-    // breakSquad(selectedStudent, 3000);
   } else if (
     selectedStudent.studentHouse === "Slytherin" ||
     selectedStudent.blood === "Pureblood"
@@ -534,10 +533,7 @@ function tryToMakeSquad(selectedStudent) {
     selectedStudent.squad = !false;
     //console.log(selectedStudent.squad);
   }
-  function breakSquad(selectedStudent) {
-    selectedStudent.squad = false;
-    console.log(selectedStudent);
-  }
+  function breakSquadPopup() {}
   function notPureOrSlyth() {
     //make a popup instead of alert
     document.querySelector("#notsquad").classList.remove("hide");
