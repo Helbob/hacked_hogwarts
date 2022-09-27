@@ -53,7 +53,6 @@ const settings = {
 
 //Need await otherwise errors
 async function start() {
-  console.log("ready");
   reigsterButtons();
   await loadBloodJSON();
   await loadStudentsJSON();
@@ -88,7 +87,6 @@ function reigsterButtons() {
 
 //Prepareing stuff
 function prepareObjects(jsonData) {
-  console.log("Object Prepared");
   allStudents = jsonData.map(prepareObject);
 
   displayList(allStudents);
@@ -96,8 +94,6 @@ function prepareObjects(jsonData) {
 
 //Cleaing up my data + blood (Do this in seperate functions if time)
 function prepareObject(jsonObject) {
-  console.log("ObjectS Prepared");
-
   //Creating students
   const studentTemplate = Object.create(Student);
 
@@ -184,13 +180,11 @@ function prepareObject(jsonObject) {
   //Pushing them into array
   allStudents.push(studentTemplate);
   currentStudents.push(studentTemplate);
-  console.log(studentTemplate);
   return studentTemplate;
 }
 
 //Filtering
 function selectFilter(event) {
-  console.log("Clicked");
   const filter = event.target.dataset.filter;
   filterList(filter);
 }
@@ -245,7 +239,6 @@ function selectSort(event) {
 
 //More sorting
 function sortList(sortBy) {
-  console.log("Chosen");
   let sortedList = currentStudents;
   if (sortBy === "firstName") {
     sortedList = sortedList.sort(sortByFirstNameAZ);
@@ -361,8 +354,6 @@ function displayStudents(student) {
 
 //Details in the detailsModal
 function displayModal(student) {
-  console.log("hej");
-
   document.querySelector("#popup").classList.remove("hide2");
   document
     .querySelector("#popup .closebuttons")
@@ -413,13 +404,11 @@ function findBlood(lastName) {
 function expelYayOrNay() {}
 
 function expelStudent() {
-  console.log("tester");
   let selectedStudent = this.parentElement
     .querySelector("div:nth-of-type(2) h1")
     .textContent.split(" ")[0];
 
   let studentToFind = selectedStudent;
-  console.log(studentToFind);
 
   const index = currentStudents.findIndex((elm) => {
     if (elm.firstName === studentToFind) {
@@ -428,15 +417,12 @@ function expelStudent() {
     return false;
   });
 
-  console.log("index", index);
   if (index !== -1) {
     const splicedArray = currentStudents.splice(index, 1);
     const foundStudent = splicedArray[0];
 
     expelledStudents.push(foundStudent);
-    console.log("expelled students", expelledStudents);
     closeDialog();
-    console.log(currentStudents);
     displayList(currentStudents);
   }
 
@@ -531,7 +517,6 @@ function tryToMakeSquad(selectedStudent) {
   function isPureOrSlyth(selectedStudent) {
     //need to toggle on it so like !== true? or smth idfk
     selectedStudent.squad = !false;
-    //console.log(selectedStudent.squad);
   }
   function breakSquadPopup() {
     document.querySelector("#hacksquad").classList.remove("hide");
@@ -616,7 +601,6 @@ function hackerMan() {
   currentStudents.forEach(breakBlood);
   //currentStudents.forEach(breakSquad);
   displayList(currentStudents);
-  console.log(currentStudents);
   //Put yourself in (Hackerman)
   //Break blood
   //CANNOT expel hackerman popup "CANNOT EXPEL HACKERMAN SMILER"
