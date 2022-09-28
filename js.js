@@ -203,7 +203,7 @@ function filterList(filter) {
   } else if (filter === "all") {
     filteredList = filteredList.filter(showAllStudents);
   } else if (filter === "expel") {
-    filteredList = expelledStudents.filter(showAllExpelledStudents);
+    filteredList = expelledStudents;
   }
 
   displayList(filteredList);
@@ -211,10 +211,6 @@ function filterList(filter) {
 
 function showAllStudents() {
   return currentStudents;
-}
-
-function showAllExpelledStudents(student) {
-  return student.expelled === true;
 }
 
 //isXHouse Functions for selectFilter
@@ -614,8 +610,13 @@ function breakBlood(student) {
 //Currently displays only count of ALL students
 //Missing for House and expelled students
 function displayCount() {
-  let lenghts = currentStudents.length;
+  let totaltStudents = currentStudents.length;
+  let totalExpelled = expelledStudents.length;
   document.querySelector(
     "#totalstudents"
-  ).textContent = `Total Students: ${lenghts}`;
+  ).textContent = `Total Students: ${totaltStudents}`;
+
+  document.querySelector(
+    "#totalexpelled"
+  ).textContent = `Total Students Exepelled: ${totalExpelled}`;
 }
