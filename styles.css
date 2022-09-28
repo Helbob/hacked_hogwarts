@@ -460,8 +460,13 @@ button.closebuttons {
   animation-duration: 2s;
 }
 
-.hack .dialog2 {
+.hack .dialog2,
+.dialog {
   background-color: #dd93d4;
+  font-family: monospace;
+}
+.hack #closebuttonok {
+  background-color: #dd62cfb9;
   font-family: monospace;
 }
 
@@ -478,5 +483,13 @@ button.closebuttons {
 }
 
 .hack .search {
+  font-family: monospace;
+}
+
+.hack #styles {
+  font-family: monospace;
+}
+
+.hack #styles h1 {
   font-family: monospace;
 }
