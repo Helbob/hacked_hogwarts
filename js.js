@@ -363,7 +363,16 @@ function displayModal(student) {
   popup.querySelector("#studentimg").src = student.image;
   popup.querySelector("#crest").src = `images/${student.studentHouse}.png`;
   popup.querySelector(".blood").textContent = "Bloodtype: " + student.blood;
-
+  if (student.prefect === true) {
+    popup.querySelector(".prefectos").src = `./images/prefect.png`;
+  } else {
+    popup.querySelector(".prefectos").src = `./images/non-prefect.png`;
+  }
+  if (student.squad === true) {
+    popup.querySelector(".crests").src = `./images/squad.png`;
+  } else {
+    popup.querySelector(".crests").src = `./images/non-squad.png`;
+  }
   function closeModal() {
     document.querySelector("#popup").classList.add("hide2");
   }
