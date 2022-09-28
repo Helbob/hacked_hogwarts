@@ -314,7 +314,7 @@ function displayStudents(student) {
   if (student.prefect === true) {
     klon.querySelector("#prefect").src = `./images/prefect.png`;
   } else {
-    klon.querySelector("#prefect").src = `/images/non-prefect.png`;
+    klon.querySelector("#prefect").src = `./images/non-prefect.png`;
   }
   klon.querySelector("#prefect").addEventListener("click", prefectToggle);
   function prefectToggle() {
