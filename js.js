@@ -177,6 +177,8 @@ function prepareObject(jsonObject) {
   let expelled = false;
   studentTemplate.expelled = expelled;
 
+  let squad = false;
+  studentTemplate.squad = squad;
   //Pushing them into array
   allStudents.push(studentTemplate);
   currentStudents.push(studentTemplate);
