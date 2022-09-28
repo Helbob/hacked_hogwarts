@@ -586,9 +586,9 @@ function hackerMan() {
 
   hackerManTemplate.image = image;
   hackerManTemplate.firstName = firstName;
-
+  document.querySelector("body").classList.add("hack");
   currentStudents.push(hackerManTemplate);
-  document.body.style.background = "#dd93d4b9";
+  //document.body.style.background = "#dd93d4b9";
   currentStudents.forEach(breakBlood);
   displayList(currentStudents);
 

@@ -365,11 +365,23 @@ button.closebuttons {
   z-index: 2;
 }
 
-.bounce {
-  animation-name: bounce;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
+/* STYLE FOR COUNTER */
+.huh {
+  display: grid;
+  grid-template-columns: 0.1fr 1fr;
 }
+
+.width {
+  max-width: 50%;
+}
+
+.center {
+  text-align: center;
+  font-size: 2rem;
+  padding: 2.5%;
+}
+
+/*HACKER MAN ANIMATIONS POGGERS */
 
 /* we bouncing boys */
 @keyframes bounce {
@@ -390,28 +402,77 @@ button.closebuttons {
   }
 }
 
-/* STYLE FOR COUNTER */
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
 
-.count {
-}
-
-.huh {
-  display: grid;
-  grid-template-columns: 0.1fr 1fr;
-}
-
-.width {
-  max-width: 50%;
-}
-
-.center {
-  text-align: center;
-  font-size: 2rem;
-  padding: 2.5%;
+  to {
+    margin-left: 8.5%;
+    width: 100%;
+  }
 }
 
 /* HACKERMAN STYLES */
 
+.bounce {
+  animation-name: bounce;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
 .pinkbuttons {
   background-color: #dd62cfb9;
+}
+
+.hack {
+  background-color: #dd93d4b9;
+}
+
+.hack #showmore {
+  background-color: #dd62cfb9;
+  font-family: monospace;
+}
+
+.hack #showmore:hover {
+  background-color: #dab2d5b9;
+  transform: scale(1.5);
+}
+
+.hack .filter {
+  background-color: #dd62cfb9;
+  font-family: monospace;
+}
+
+.hack .filter:hover {
+  background-color: #dd93d4;
+  border: none;
+  color: #dd93d4b9;
+}
+
+.hack #container {
+  animation-name: slidein;
+  animation-duration: 2s;
+}
+
+.hack .dialog2 {
+  background-color: #dd93d4;
+  font-family: monospace;
+}
+
+.hack .dialog2 h1 {
+  font-family: monospace;
+}
+
+.hack .expel {
+  background-color: rgba(199, 53, 199, 0.87);
+}
+
+.hack h1 {
+  font-family: monospace;
+}
+
+.hack .search {
+  font-family: monospace;
 }
