@@ -612,11 +612,32 @@ function breakBlood(student) {
 function displayCount() {
   let totaltStudents = currentStudents.length;
   let totalExpelled = expelledStudents.length;
+  let totalGryffindor = currentStudents.filter(isGryffindor).length;
+  let totaltHufflepuff = currentStudents.filter(isHufflePuff).length;
+  let totalSlytherin = currentStudents.filter(isSlytherin).length;
+  let totalRavenclas = currentStudents.filter(isRavenclaw).length;
+
+  //Total count ALL students
   document.querySelector(
     "#totalstudents"
   ).textContent = `Total Students: ${totaltStudents}`;
 
+  //Total count ALL expelled students
   document.querySelector(
     "#totalexpelled"
   ).textContent = `Total Students Exepelled: ${totalExpelled}`;
+
+  //Total count houses
+  document.querySelector(
+    "#totalgryf"
+  ).textContent = `Total Students from Gryffindor: ${totalGryffindor}`;
+  document.querySelector(
+    "#totalhuffle"
+  ).textContent = `Total Students from Hufflepuff: ${totaltHufflepuff}`;
+  document.querySelector(
+    "#totalsltyh"
+  ).textContent = `Total Students from Slytherin: ${totalSlytherin}`;
+  document.querySelector(
+    "#totalraven"
+  ).textContent = `Total Students from Ravenclaw: ${totalRavenclas}`;
 }
