@@ -625,19 +625,19 @@ function displayCount() {
   //Total count ALL expelled students
   document.querySelector(
     "#totalexpelled"
-  ).textContent = `Total Students Exepelled: ${totalExpelled}`;
+  ).textContent = `Exepelled: ${totalExpelled}`;
 
   //Total count houses
   document.querySelector(
     "#totalgryf"
-  ).textContent = `Total Students from Gryffindor: ${totalGryffindor}`;
+  ).textContent = `Gryffindor: ${totalGryffindor}`;
   document.querySelector(
     "#totalhuffle"
-  ).textContent = `Total Students from Hufflepuff: ${totaltHufflepuff}`;
+  ).textContent = `Hufflepuff: ${totaltHufflepuff}`;
   document.querySelector(
     "#totalsltyh"
-  ).textContent = `Total Students from Slytherin: ${totalSlytherin}`;
+  ).textContent = `Slytherin: ${totalSlytherin}`;
   document.querySelector(
     "#totalraven"
-  ).textContent = `Total Students from Ravenclaw: ${totalRavenclas}`;
+  ).textContent = `Ravenclaw: ${totalRavenclas}`;
 }

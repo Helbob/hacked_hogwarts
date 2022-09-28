@@ -55,10 +55,14 @@ input {
   border-radius: 2px;
 }
 .search {
-  padding-top: 1%;
-  padding-bottom: 0.5%;
   margin: 0 auto;
-  width: 50%;
+  width: 100%;
+  background-color: rgba(128, 128, 128, 0.295);
+  height: 5.5%;
+  border: 2px solid rgba(0, 0, 0, 0.123);
+  margin-left: 20%;
+  margin-top: 15%;
+  padding: 5%;
 }
 
 li {
@@ -380,4 +384,18 @@ button.closebuttons {
   100% {
     transform: scale(1, 1) translate(0px, 0px);
   }
+}
+
+/* STYLE FOR COUNTER */
+
+.count {
+}
+
+.huh {
+  display: grid;
+  grid-template-columns: 0.1fr 1fr;
+}
+
+.width {
+  max-width: 50%;
 }
