@@ -328,9 +328,9 @@ function displayStudents(student) {
 
   //SQUAD TOGGLE
   if (student.squad === true) {
-    klon.querySelector("#squad").src = `/images/squad.png`;
+    klon.querySelector("#squad").src = `./images/squad.png`;
   } else {
-    klon.querySelector("#squad").src = `/images/non-squad.png`;
+    klon.querySelector("#squad").src = `./images/non-squad.png`;
   }
   klon.querySelector("#squad").addEventListener("click", squadToggle);
   function squadToggle() {
