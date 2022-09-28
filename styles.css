@@ -10,6 +10,7 @@
 
 body {
   margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 #test {
@@ -88,6 +89,10 @@ img {
   height: 150px;
 }
 
+#styles h1 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 h1 {
   font-family: "Merienda", cursive;
   font-size: 0.9rem;
@@ -136,7 +141,6 @@ html {
 
 .left {
   display: flex;
-  justify-content: center;
 }
 
 /* POP UP DETAILS */
