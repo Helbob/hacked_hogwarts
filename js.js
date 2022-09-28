@@ -36,7 +36,7 @@ const Student = {
   lastName: "",
   nickName: "",
   gender: "",
-  house: "",
+  studentHouse: "",
   blood: "",
   image: "",
   expelled: false,
@@ -309,7 +309,6 @@ function displayStudents(student) {
     student.firstName + " " + student.middleName + " " + student.lastName;
   klon.querySelector("#test").src = student.image;
   klon.querySelector("#hus").textContent = student.studentHouse;
-  klon.querySelector("#gender").textContent = student.gender;
 
   //PREFECT TOGGLE
   if (student.prefect === true) {
@@ -537,7 +536,6 @@ function tryToMakeSquad(selectedStudent) {
     function closeWindow() {
       document.querySelector("#notsquad").classList.add("hide");
     }
-    // alert("NOT PURE OR SLYTH NO CAN DO SIR");
   }
 }
 
@@ -569,7 +567,6 @@ function searchList() {
 function hackerMan() {
   console.log("hihi hack");
   isSystemHackedQuestionmark = true;
-  //put in by hackermanTemplate instead, this is just temp solution
   const Hackerman = {
     firstName: "",
     middleName: "",

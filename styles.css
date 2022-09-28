@@ -409,3 +409,9 @@ button.closebuttons {
   font-size: 2rem;
   padding: 2.5%;
 }
+
+/* HACKERMAN STYLES */
+
+.pinkbuttons {
+  background-color: #dd62cfb9;
+}
